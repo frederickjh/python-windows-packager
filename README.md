@@ -11,14 +11,25 @@ executable, all from your Linux box.
 To quickly build your Wine environment, then create a standalone EXE,
 run the following commands:
 
-    $ wget "http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi" 
-    $ wget "http://nchc.dl.sourceforge.net/project/pywin32/pywin32/Build%20218/pywin32-218.win32-py2.7.exe"
-    $ build_environment/create.sh
-    $ export WINEPREFIX=/tmp/path-outputted-from-create
-    $ wine start python-2.7.3.msi
-    $ wine pywin32-218.win32-py2.7.exe
-    $ build_environment/freeze.sh
-    $ ./package sample-application/src/main.py MySampleProgram
+```bash
+mkdir installers
+cd installers
+wget "https://www.python.org/ftp/python/3.6.8/python-3.6.8.exe" 
+wget "https://github.com/mhammond/pywin32/releases/download/b300/pywin32-300.win32-py3.6.exe"
+cd ..
+build_environment/create.sh
+export WINEPREFIX=/tmp/path-outputted-from-create
+wine start python-3.6.8.exe
+```
+In the Python installer
+* Tick **Add Python *[version number]* to PATH**
+* Select **Customize installation** > **Next**  > **Customize install location** > 
+   * C:\Python
+```bash
+wine pywin32-300.win32-py3.6.exe
+build_environment/freeze.sh
+./package.sh sample-application/src/main.py MySampleProgram
+```
 
 This will create a Wine environment in a tarball at 
 ./build_environment/wine.tar.gz.
