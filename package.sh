@@ -1,4 +1,6 @@
 #!/bin/bash -e
+# Load configuration
+source config.sh
 
 if [ $# -ne 2 ]; then
     echo "Usage: $0 /path/to/main.py ProjectName"
@@ -15,7 +17,6 @@ THIS_SCRIPT_DIR=`dirname ${THIS_SCRIPT_PATH}`
 
 
 
-PYTHON_EXE_WIN="C:\\Python27\\python.exe"
 
 WINE_TARBALL=${THIS_SCRIPT_DIR}/build_environment/wine.tar.gz
 
@@ -41,7 +42,6 @@ else
 fi
 
 BUILD_DIR_LINUX=${WINEPREFIX}/drive_c/build
-PY_DIR_WIN="C:\\Python27"
 BUILD_DIR_WIN="C:\\build"
 mkdir -p ${BUILD_DIR_LINUX}
 

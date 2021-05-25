@@ -1,4 +1,6 @@
 #!/bin/bash -e
+# Load configuration
+source config.sh
 
 THIS_SCRIPT_PATH=`readlink -f $0`
 THIS_SCRIPT_DIR=`dirname ${THIS_SCRIPT_PATH}`
@@ -18,10 +20,10 @@ echo "    $ export WINEPREFIX=${WINEPREFIX}"
 echo
 echo "# STEP 2 #"
 echo "    Run your python installers with wine, eg:"
-echo "    $ wine start installers/python-2.7.3.msi"
-echo "    $ wine installers/pywin32-218.win32-py2.7.exe"
+echo "    $ wine start installers/"$pythoninstaller
+echo "    $ wine installers/"$pywin32installer
 echo
 echo "# STEP 3 #"
-echo "    Run ./freeze.sh to save back to {WINE_TARBALL}"
+echo "    Run build_environment/freeze.sh to save back to {WINE_TARBALL}"
 
 
