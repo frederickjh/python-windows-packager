@@ -1,6 +1,6 @@
 #!/bin/bash -e
 # Load configuration
-source config.sh
+source package_config.sh
 
 if [ $# -ne 2 ]; then
     echo "Usage: $0 /path/to/main.py ProjectName"

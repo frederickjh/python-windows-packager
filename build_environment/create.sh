@@ -1,6 +1,6 @@
 #!/bin/bash -e
 # Load configuration
-source config.sh
+source package_config.sh
 
 THIS_SCRIPT_PATH=`readlink -f $0`
 THIS_SCRIPT_DIR=`dirname ${THIS_SCRIPT_PATH}`
