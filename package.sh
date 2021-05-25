@@ -78,7 +78,7 @@ echo -e -n "#\n# RUNNING PYINSTALLER\n#\n"
 
 wine "${PYTHON_EXE_WIN}" "-m" "PyInstaller" \
     "--name=${PROJECT_NAME}" \
-    --onefile \
+    --onedir \
     --noconsole \
     "${SOURCE_DIR_WIN}\\${MAIN_PY}"
 
