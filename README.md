@@ -39,3 +39,5 @@ This will create a Wine environment in a tarball at
 If you want to use a different Python version or add additional Python
 modules, just do the above with different Windows Python installers.
 
+## Known Issues
+* sample-application does not work with Python 3, pull requests welcome.
